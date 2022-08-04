@@ -1,0 +1,15 @@
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    sudo apt install apache2 git -y && git clone https://github.com/DevOps-Arts/site/ && cp site/index.html /var/www/html/index.html
+  displayName: 'Run a multi-line script'
+
